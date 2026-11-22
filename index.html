@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#080d18" />
+  <title>ROLL RUSH</title>
+</head>
+<body>
+  <div id="game"></div>
+
+  <main id="app">
+    <section id="home" class="screen">
+      <div class="brand-mark">RR</div>
+      <p class="eyebrow">ROLL · DODGE · SURVIVE</p>
+      <h1>ROLL <span>RUSH</span></h1>
+      <p class="subtitle">How long can you survive?</p>
+
+      <div class="mode-picker">
+        <button class="mode selected" data-mode="easy">
+          <strong>EASY</strong><small>Chill pace</small>
+        </button>
+        <button class="mode" data-mode="medium">
+          <strong>MEDIUM</strong><small>Getting faster</small>
+        </button>
+        <button class="mode" data-mode="hard">
+          <strong>HARD</strong><small>Fast & intense</small>
+        </button>
+      </div>
+
+      <button id="play-button" class="primary-button">PLAY NOW <span>→</span></button>
+      <button id="records-button" class="text-button">VIEW RECORDS</button>
+      <p class="offline-note"><span></span> OFFLINE GAME</p>
+    </section>
+
+    <section id="hud" class="hud hidden">
+      <div class="hud-top">
+        <div><small>MODE</small><strong id="hud-mode">EASY</strong></div>
+        <div class="timer"><small>TIME</small><strong id="timer">00:00.0</strong></div>
+        <button id="pause-button" class="pause-button" aria-label="Pause">Ⅱ</button>
+      </div>
+      <div class="speed-panel"><span>SPEED</span><strong id="speed">1.0x</strong></div>
+      <div class="hint">SWIPE TO MOVE · TAP / CLICK TO JUMP</div>
+    </section>
+
+    <section id="pause-screen" class="overlay hidden">
+      <div class="panel">
+        <p class="eyebrow">TAKE A BREAK</p>
+        <h2>PAUSED</h2>
+        <button id="resume-button" class="primary-button">RESUME</button>
+        <button id="quit-button" class="text-button">QUIT RUN</button>
+      </div>
+    </section>
+
+    <section id="gameover" class="overlay hidden">
+      <div class="panel">
+        <p class="eyebrow">RUN COMPLETE</p>
+        <h2>GAME OVER</h2>
+        <p class="result-label">YOUR TIME</p>
+        <div id="final-time" class="final-time">00:00.0</div>
+        <p id="new-record" class="new-record hidden">✦ NEW PERSONAL RECORD ✦</p>
+        <div class="result-stats">
+          <div><small>MODE</small><strong id="result-mode">EASY</strong></div>
+          <div><small>BEST</small><strong id="result-best">00:00.0</strong></div>
+        </div>
+        <button id="retry-button" class="primary-button">PLAY AGAIN ↻</button>
+        <button id="home-button" class="text-button">MAIN MENU</button>
+      </div>
+    </section>
+
+    <section id="records" class="overlay hidden">
+      <div class="panel records-panel">
+        <button id="close-records" class="close-button">×</button>
+        <p class="eyebrow">YOUR PERSONAL BESTS</p>
+        <h2>RECORDS</h2>
+        <div class="record-tabs">
+          <button class="record-tab selected" data-period="allTime">ALL TIME</button>
+          <button class="record-tab" data-period="weekly">WEEKLY</button>
+          <button class="record-tab" data-period="daily">DAILY</button>
+        </div>
+        <div id="record-list"></div>
+        <p class="record-footnote">Records are saved on this device. No internet needed.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "appId": "com.rollrush.game",
+  "appName": "ROLL RUSH",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
